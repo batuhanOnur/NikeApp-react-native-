@@ -2,6 +2,28 @@ import { StyleSheet, Text, View,FlatList,Pressable } from 'react-native'
 import cart from '../data/cart'
 import CartListItem from '../components/CartListItem';
 
+
+const ShoppingCartTotals = () => (
+    <View style={styles.totalsContainer}>
+        <View style={styles.row}>
+            <Text style={styles.text}>Subtotal</Text>
+            <Text style={styles.text}>410.00 $</Text>
+        </View>
+
+        <View style={styles.row}>
+            <Text style={styles.text}>Delivery</Text>
+            <Text style={styles.text}>10.00 $</Text>
+        </View>
+
+        <View style={styles.row}>
+            <Text style={styles.textBold}>Total</Text>
+            <Text style={styles.textBold}>420.00 $</Text>
+        </View>
+    </View>
+)
+
+
+
 const ShoppingCart = () => {
     return (
         <>
@@ -10,24 +32,7 @@ const ShoppingCart = () => {
             renderItem={({ item }) => (
                 <CartListItem cartItem={item}/>
             )}
-            ListFooterComponent={()=> (
-                <View style={styles.totalsContainer}>
-                    <View style={styles.row}>
-                        <Text style={styles.text}>Subtotal</Text>
-                        <Text style={styles.text}>410.00 $</Text>
-                    </View>
-
-                    <View style={styles.row}>
-                        <Text style={styles.text}>Delivery</Text>
-                        <Text style={styles.text}>10.00 $</Text>
-                    </View>
-
-                    <View style={styles.row}>
-                        <Text style={styles.textBold}>Total</Text>
-                        <Text style={styles.textBold}>420.00 $</Text>
-                    </View>
-                </View>
-            )}
+            ListFooterComponent={ShoppingCartTotals}
         />
         
         <Pressable style={styles.button}>
