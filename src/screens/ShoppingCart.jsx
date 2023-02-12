@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View,FlatList,Pressable } from 'react-native'
+import { StyleSheet, Text, View,FlatList,Pressable,ScrollView,useWindowDimensions  } from 'react-native'
 import cart from '../data/cart'
 import CartListItem from '../components/CartListItem';
 
@@ -19,6 +19,10 @@ const ShoppingCartTotals = () => (
             <Text style={styles.textBold}>Total</Text>
             <Text style={styles.textBold}>420.00 $</Text>
         </View>
+
+        <Pressable style={styles.button}>
+            <Text style={styles.buttonText}>Checkout</Text>
+        </Pressable>
     </View>
 )
 
@@ -27,17 +31,15 @@ const ShoppingCartTotals = () => (
 const ShoppingCart = () => {
     return (
         <>
-        <FlatList 
-            data={cart}
-            renderItem={({ item }) => (
-                <CartListItem cartItem={item}/>
-            )}
-            ListFooterComponent={ShoppingCartTotals}
-        />
-        
-        <Pressable style={styles.button}>
-            <Text style={styles.buttonText}>Checkout</Text>
-        </Pressable>
+        <View>
+            <FlatList
+                data={cart}
+                renderItem={({ item }) => (
+                    <CartListItem cartItem={item}/>
+                )}
+                ListFooterComponent={ShoppingCartTotals}
+            />
+        </View>
         </>
     )
 }
@@ -65,14 +67,13 @@ const styles = StyleSheet.create({
         fontWeight: '500'
     },
     button:{
-        position: 'absolute',
         backgroundColor: 'black',
-        bottom: 30,
         width: '90%',
         alignSelf: 'center',
         padding: 20,
         borderRadius: 100,
-        alignItems: 'center'
+        alignItems: 'center',
+        marginTop: 10
     },
     buttonText:{
         color: 'white',
