@@ -1,4 +1,3 @@
-import React from 'react'
 import { StyleSheet, Text, View,Image, FlatList, useWindowDimensions, ScrollView,Pressable } from 'react-native'
 import products from '../data/products'
 
