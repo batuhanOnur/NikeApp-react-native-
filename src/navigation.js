@@ -29,7 +29,7 @@ const Navigation = () => {
                 }}/>
                 <Stack.Screen name="Cart" component={ShoppingCart}/>
             </Stack.Navigator>
-        </NavigationContainer>
+        </NavigationContainer> 
     )
 }
 
