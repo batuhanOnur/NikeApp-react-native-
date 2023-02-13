@@ -9,7 +9,7 @@ const ProductDetailsScreen = () => {
     const { width } = useWindowDimensions()
     
     const addToCart = () => {
-        console.warn("add to cart")
+        console.warn("add to carts")
     }
     
     return(
