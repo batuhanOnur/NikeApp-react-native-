@@ -16,7 +16,6 @@ const ProductsScreen = ({ navigation }) => {
             renderItem={({ item })=> (
                 <Pressable onPress={() => {
                     dispatch(setSelectedProduct(item.id))
-                    
                     navigation.navigate("Product Details")
                 }} style={styles.itemContainer}>
                     <Image 
